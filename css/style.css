@@ -1,0 +1,187 @@
+/* 
+   =============================================
+   OBSERVAÇÃO IMPORTANTE SOBRE CORES DOS TÍTULOS:
+   - As cores dos títulos (h2) podem ser alteradas facilmente
+   - Opções sugeridas (com bom contraste no fundo escuro):
+     • Laranja: #FFA726
+     • Amarelo: #FFD54F
+     • Azul Claro: #4FC3F7
+     • Verde: #81C784
+     • Dourado: #FFD700
+   - Para alterar: modifique os valores em .service-section h2
+   =============================================
+*/
+
+/* ===== VARIÁVEIS GLOBAIS ===== */
+:root {
+    --fundo: #061F28;
+    --branco: #FFFFFF;
+    --cinza-claro: #F0F3F5;
+    --destaque: #A62F03;
+    --destaque-claro: #F5B918;
+    --texto-titulo-investimento: #FFD54F; /* Amarelo claro - altere conforme necessidade */
+    --texto-titulo-mcmv: #4FC3F7;        /* Azul claro - altere conforme necessidade */
+}
+
+/* ===== RESET E BASE ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', Arial, sans-serif;
+    color: var(--branco);
+    line-height: 1.6;
+    background: linear-gradient(rgba(6, 31, 40, 0.7), rgba(6, 31, 40, 0.7)), 
+                url('../imgs/bg_jampa.jpg') no-repeat center center fixed;
+    background-size: cover;
+}
+
+/* ===== ESTRUTURA ===== */
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* ===== CABEÇALHO ===== */
+header {
+    padding: 2rem 1.5rem;
+    text-align: center;
+}
+
+.logo {
+    max-width: 280px;
+    height: auto;
+    filter: brightness(0) invert(1);
+}
+
+/* ===== CONTEÚDO PRINCIPAL ===== */
+main {
+    flex: 1;
+    padding: 0 1.5rem 2rem;
+}
+
+/* ===== SEÇÕES DE SERVIÇOS ===== */
+.service-section {
+    background-color: rgba(255,255,255,0.05);
+    border-radius: 8px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    backdrop-filter: blur(4px);
+}
+
+/* Borda e estilo para Investimento */
+.service-section.priority {
+    border-left: 4px solid var(--destaque);
+}
+
+/* Borda e estilo para MCMV */
+.service-section.mcmv {
+    border-left: 4px solid var(--destaque-claro);
+}
+
+/* ===== TIPOGRAFIA ===== */
+h1 {
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin-bottom: 2rem;
+    text-align: center;
+    color: var(--branco);
+}
+
+/* ESTILOS DOS TÍTULOS (ALTERE AS CORES AQUI) */
+h2 {
+    font-size: 1.4rem;
+    font-weight: 700; /* Negrito */
+    margin-bottom: 1rem;
+    letter-spacing: 0.5px;
+}
+
+.service-section.priority h2 {
+    color: var(--texto-titulo-investimento); /* Cor do título Investimento */
+}
+
+.service-section.mcmv h2 {
+    color: var(--texto-titulo-mcmv); /* Cor do título MCMV */
+}
+
+p {
+    margin-bottom: 1.5rem;
+    opacity: 0.9;
+}
+
+/* ===== BOTÕES ===== */
+.btn-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    text-decoration: none;
+    font-weight: 500;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+    border: 1px solid transparent;
+}
+
+.btn-site {
+    background-color: var(--branco);
+    color: var(--fundo);
+}
+
+.btn-instagram {
+    background-color: #E1306C;
+    color: var(--branco);
+}
+
+.btn-whatsapp {
+    background-color: #25D366;
+    color: var(--branco);
+}
+
+/* ===== RODAPÉ ===== */
+footer {
+    text-align: center;
+    padding: 2rem 1.5rem;
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+.copyright {
+    margin-top: 1rem;
+    font-size: 0.8rem;
+}
+
+/* ===== RESPONSIVIDADE ===== */
+@media (min-width: 768px) {
+    .btn-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    header {
+        padding: 3rem 1.5rem;
+    }
+    
+    .logo {
+        max-width: 320px;
+    }
+    
+    h1 {
+        font-size: 2rem;
+    }
+    
+    h2 {
+        font-size: 1.5rem;
+    }
+}
